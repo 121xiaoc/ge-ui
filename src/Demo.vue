@@ -1,10 +1,10 @@
 <template>
     <div id="demo">
-        <g-icon color="#FFFFFF"></g-icon>
+        <g-button color="#000000"></g-button>
     </div>
 </template>
 
-<<script>
+<script>
 export default {
     name: 'demo',
 }
