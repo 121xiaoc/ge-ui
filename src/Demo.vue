@@ -1,9 +1,11 @@
 <template>
-    <div id="demo"></div>
+    <div id="demo">
+        <g-icon color="#FFFFFF"></g-icon>
+    </div>
 </template>
 
 <<script>
 export default {
-     name: 'demo',
+    name: 'demo',
 }
 </script>
