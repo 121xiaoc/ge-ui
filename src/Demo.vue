@@ -7,6 +7,7 @@
         <g-button type="warning">warning</g-button>
         <g-button type="danger">danger</g-button>
         <g-button icon="test" type="success">放个图标</g-button>
+        <g-button icon="test" type="success"></g-button>
     </div>
 </template>
 

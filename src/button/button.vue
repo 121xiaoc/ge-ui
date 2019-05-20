@@ -13,7 +13,10 @@
         <!-- loading 图标 -->
         <g-icon name="sync" v-if="loading" class="loading"></g-icon>
         <g-icon :name="icon" v-if="icon"></g-icon>
-        <slot></slot>
+        <!-- 判断组件插槽里是否有内容 -->
+        <span v-if="$slots.default">
+            <slot></slot>
+        </span>
     </button>
 </template>
 
@@ -40,6 +43,9 @@ export default {
         handleClick(evt) {
             this.$emit('click', evt);
         }
+    },
+    mounted() {
+        // console.log(this.$slots.default)
     },
 }
 </script>
