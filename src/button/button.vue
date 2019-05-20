@@ -12,6 +12,7 @@
         ]">
         <!-- loading 图标 -->
         <g-icon name="sync" v-if="loading" class="loading"></g-icon>
+        <g-icon :name="icon" v-if="icon"></g-icon>
         <slot></slot>
     </button>
 </template>
@@ -29,7 +30,8 @@ export default {
         type: {
             type: String,
             default: 'default'
-        }
+        },
+        icon: String, // 图标
     },
     methods: {
         /**
