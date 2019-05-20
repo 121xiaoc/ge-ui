@@ -1,6 +1,6 @@
 <template>
     <div id="demo">
-        <g-button color="#000000"></g-button>
+        <g-button color="#000000" loading></g-button>
     </div>
 </template>
 

@@ -2,13 +2,19 @@
     <button class="g-button" 
         @click="handleClick"
         :disabled="disabled || loading">
+        <!-- loading 图标 -->
+        <g-icon name="sync" v-if="loading" class="loading"></g-icon>
         你好啊
     </button>
 </template>
 
 <script>
+import Icon from '../icon/icon.vue'
 export default {
     name: 'g-button',
+    components: {
+        'g-icon': Icon
+    },
     props: {
         loading: Boolean, // 加载
         disabled: Boolean, // 禁用
