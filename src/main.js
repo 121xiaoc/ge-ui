@@ -10,7 +10,7 @@ try {
     Vue.component(res.default.name, res.default) // 注册
   })
 } catch (e) {
-  // console.log(e)
+  console.log(e)
 }
 
 new Vue({
