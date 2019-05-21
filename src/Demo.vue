@@ -15,6 +15,7 @@
             </g-button-group>
             <g-button-group>
                 <g-button type="success">success</g-button>
+                <g-button type="primary">primary</g-button>
                 <g-button type="success">success1</g-button>
             </g-button-group>
             <g-button-group>

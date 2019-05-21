@@ -10,6 +10,7 @@ try {
     Vue.component(res.default.name, res.default) // 注册
   })
 } catch (e) {
+  // eslint-disable-next-line
   console.log(e)
 }
 

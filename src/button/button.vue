@@ -65,6 +65,7 @@ $danger-color: #F56C6C; // 危险的颜色
 $danger-weak-color: #f78989;
 $danger-strong-color: #dd6161;
 $info-color: #909399;
+$button-border-radius: 4px; // 
 .g-button {
     display: inline-block;
     line-height: 1;
@@ -85,7 +86,7 @@ $info-color: #909399;
     -ms-user-select: none;
     padding: 12px 20px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: $button-border-radius;
     &:hover {
         color: $primary-color;
         border-color: $primary-color;
