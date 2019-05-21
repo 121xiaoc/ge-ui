@@ -24,6 +24,22 @@
             </g-button-group>-->
         </div>
         <div class="demo-layout">
+            <g-row>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+            </g-row>
             <g-row :gutter='20'>
                 <g-col :span="1"><div class="bg-purple" ></div></g-col>
                 <g-col :span="1"><div class="bg-purple-light"></div></g-col>
@@ -38,7 +54,7 @@
                 <g-col :span="1"><div class="bg-purple" ></div></g-col>
                 <g-col :span="1"><div class="bg-purple-light"></div></g-col>
                 <g-col :span="1"><div class="bg-purple" ></div></g-col>
-                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1" :offset="2"><div class="bg-purple-light"></div></g-col>
             </g-row>
         </div>
     </div>
@@ -61,5 +77,6 @@ export default {
     }
     .demo-layout .g-col {
         border-radius: 4px;
+        overflow: hidden;
     }
 </style>
