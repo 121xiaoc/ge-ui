@@ -18,10 +18,28 @@
                 <g-button type="primary">primary</g-button>
                 <g-button type="success">success1</g-button>
             </g-button-group>
-            <g-button-group>
+            <!--<g-button-group>
                 <span>212</span>
                 <g-button type="success">success1</g-button>
-            </g-button-group>
+            </g-button-group>-->
+        </div>
+        <div class="demo-layout">
+            <g-row :gutter='20'>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+                <g-col :span="1"><div class="bg-purple" ></div></g-col>
+                <g-col :span="1"><div class="bg-purple-light"></div></g-col>
+            </g-row>
         </div>
     </div>
 </template>
@@ -31,3 +49,17 @@ export default {
     name: 'demo',
 }
 </script>
+
+<style lang="scss">
+    .demo-layout .bg-purple {
+        background: #d3dce6;
+        height: 40px;
+    }
+    .demo-layout .bg-purple-light {
+        background: #e5e9f2;
+         height: 40px;
+    }
+    .demo-layout .g-col {
+        border-radius: 4px;
+    }
+</style>
