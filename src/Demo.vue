@@ -62,6 +62,10 @@
                 <g-col :span="12" :xs="{span: 20, offset: 4}"><div class="bg-purple" ></div></g-col>
             </g-row>
         </div>
+        <g-container style="margin-top: 20px">
+            <g-header style="text-align: center">头部</g-header>
+            <g-main>内容</g-main>
+        </g-container>
     </div>
 </template>
 

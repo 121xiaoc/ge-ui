@@ -3,6 +3,7 @@
         class="g-icon" aria-hidden="true" :style="{color}">
         <use :xlink:href="`#i-${name}`"></use>
     </svg>
+    <!--1、style的省略写法 style="{{color: color}}"-->
 </template>
 
 <script>
