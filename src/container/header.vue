@@ -1,7 +1,7 @@
 <template>
     <header class="g-header" 
         :style="{
-            'height': height + 'px'
+            height
         }">
         <slot></slot>
     </header>
@@ -13,8 +13,8 @@ export default {
     componentName: 'g-header',
     props: {
         height: {
-            type: Number,
-            default: 60
+            type: String,
+            default: '60px'
         }
     }
 }

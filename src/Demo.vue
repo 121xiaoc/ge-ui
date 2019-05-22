@@ -66,6 +66,36 @@
             <g-header style="text-align: center">头部</g-header>
             <g-main>内容</g-main>
         </g-container>
+        <g-container style="margin-top: 20px">
+            <g-header style="text-align: center">头部</g-header>
+            <g-main>内容</g-main>
+            <g-footer style="text-align: center">尾部</g-footer>
+        </g-container>
+        <g-container style="margin-top: 20px">
+            <g-aside style="width: 200px">侧边栏</g-aside>
+            <g-main>内容</g-main>
+        </g-container>
+        <g-container style="margin-top: 20px">
+            <g-header style="text-align: center">头部</g-header>
+            <g-container>
+                <g-aside style="width: 200px">侧边栏</g-aside>
+                <g-main>内容</g-main>
+            </g-container>
+        </g-container>
+        <g-container style="margin-top: 20px">
+            <g-header style="text-align: center">头部</g-header>
+            <g-container>
+                <g-aside style="width: 200px">侧边栏</g-aside>
+                <g-main>内容</g-main>
+            </g-container>
+        </g-container>
+        <g-container style="margin-top: 20px">
+            <g-aside style="width: 200px">侧边栏</g-aside>
+            <g-container>
+                <g-main>内容</g-main>
+                <g-footer style="text-align: center">尾部</g-footer>
+            </g-container>
+        </g-container>
     </div>
 </template>
 
