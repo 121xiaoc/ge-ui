@@ -56,6 +56,11 @@
                 <g-col :span="1"><div class="bg-purple" ></div></g-col>
                 <g-col :span="1" :offset="2"><div class="bg-purple-light"></div></g-col>
             </g-row>
+            <g-row>
+                <!-- 响应式布局 屏幕小于575.98px 时 占据 20/24 偏移 4/24-->
+                <!-- xs 接收一个对象 所以要用v-bind -->
+                <g-col :span="12" :xs="{span: 20, offset: 4}"><div class="bg-purple" ></div></g-col>
+            </g-row>
         </div>
     </div>
 </template>
