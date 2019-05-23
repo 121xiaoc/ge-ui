@@ -96,6 +96,9 @@
                 <g-footer style="text-align: center">尾部</g-footer>
             </g-container>
         </g-container>
+        <div>
+            <g-input></g-input>
+        </div>
     </div>
 </template>
 
