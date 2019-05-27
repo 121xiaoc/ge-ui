@@ -96,8 +96,13 @@
                 <g-footer style="text-align: center">尾部</g-footer>
             </g-container>
         </g-container>
-        <div>
-            <g-input></g-input>
+        <div style="margin-top: 20px">
+            <g-input 
+                placeholder="请输入内容" 
+                v-model="demoValue1"
+                :disabled="true">
+            </g-input>
+            <span>{{demoValue1}}</span>
         </div>
     </div>
 </template>
@@ -105,6 +110,11 @@
 <script>
 export default {
     name: 'demo',
+    data () {
+        return {
+            demoValue1: ''
+        }
+    }
 }
 </script>
 
