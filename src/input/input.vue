@@ -3,12 +3,14 @@
         <!-- 用$attrs 来简化placeholder的props-->
         <input class="g-input-inner"
             :class="[{
-               'is-disabled': disabled 
+               'is-disabled': disabled,
+               'have-icon': icon
             }]" 
             :disabled="disabled"
             v-bind="$attrs"
             :value="value"
             @input="handleInput"/>
+        <g-icon :name="icon" v-if="icon" class="input-icon"></g-icon>
     </div>
 </template>
 
@@ -19,6 +21,7 @@ export default {
     props: {
         value: String, // value
         disabled: Boolean, // 是否禁用
+        icon: String
     },
     methods: {
         // 监听input变化
@@ -78,6 +81,16 @@ export default {
                 border-color: $color-disabled-border-input;
                 cursor: not-allowed;
             }
+            &.have-icon {
+                padding-left: 30px;
+            }
+        }
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            color: $input-hover-border-color;
+            left: 10px;
+            margin-top: -7px;
         }
     }
 </style>

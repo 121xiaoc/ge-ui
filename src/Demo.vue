@@ -100,10 +100,14 @@
             <g-input 
                 placeholder="请输入内容" 
                 v-model="demoValue1"
-                :disabled="true">
+                icon="sync">
             </g-input>
             <span>{{demoValue1}}</span>
         </div>
+        <g-popover style="margin: 20px 140px 0">
+            <g-button type="warning">warning</g-button>
+            <g-button type="warning">warning</g-button>
+        </g-popover>
     </div>
 </template>
 
