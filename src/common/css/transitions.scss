@@ -1,0 +1,5 @@
+@import './var.scss';
+
+.fade-in-linear-enter-active {
+    transition: $fade-linear-transition
+}
