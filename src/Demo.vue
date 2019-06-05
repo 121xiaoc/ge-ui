@@ -104,7 +104,7 @@
             </g-input>
             <span>{{demoValue1}}</span>
         </div>
-        <g-popover style="margin: 20px 140px 0">
+        <g-popover style="margin: 20px 140px 0" trigger="hover">
             <g-button type="success" class="btn1" slot="reference">按钮</g-button>
         </g-popover>
     </div>

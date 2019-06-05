@@ -25,7 +25,7 @@ export default {
         trigger: {
             type: String,
             default: 'click',
-            validator: value => ['click'].includes(value)
+            validator: value => ['click', 'hover'].includes(value)
         }
     },
     watch: {
@@ -36,6 +36,18 @@ export default {
          */
         onClickToggle () {
             this.showPopover = !this.showPopover
+        },
+        /**
+         * reference mouseover 处理事件
+         */
+        onMouseenter () {
+            this.showPopover = true
+        },
+        /**
+         * reference mouseout 处理事件
+         */
+        onMouseleave () {
+            this.showPopover = false
         }
     },
     mounted() {
@@ -43,13 +55,19 @@ export default {
         if (this.$slots.reference && this.$slots.reference[0]) {
             reference = this.referenceElm = this.$slots.reference[0].elm
         }
-        // let popover = this.$refs.popover
+        let popover = this.$refs.popover
         // console.log(reference)
         if (reference) { // 判断 reference 插槽是否有值插入
             // console.log(hasClass(reference, 'g-button-success'))
             addClass(reference, 'list')
             if (this.trigger === 'click') {
                 on(reference, 'click', this.onClickToggle)
+            }
+            if (this.trigger === 'hover') {
+                on(reference, 'mouseenter', this.onMouseenter)
+                on(reference, 'mouseleave', this.onMouseleave)
+                on(popover, 'mouseenter', this.onMouseenter)
+                on(popover, 'mouseleave', this.onMouseleave)
             }
         }
     },
@@ -67,7 +85,7 @@ $color-border-popover: #ebeef5;
 
 .g-popover {
     position: absolute;
-    bottom: 100%;
+    bottom: 120%;
     width: 200px;
     box-shadow: $box-shadow;
     padding: 10px 14px;
