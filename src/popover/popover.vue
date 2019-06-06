@@ -72,7 +72,7 @@ export default {
         if (reference) { // 判断 reference 插槽是否有值插入
             // console.log(hasClass(reference, 'g-button-success'))
             // addClass(reference, 'list')
-            console.log(this.trigger)
+            // console.log(this.trigger)
             if (this.trigger === 'click') {
                 on(reference, 'click', this.onClickToggle)
             }
@@ -92,8 +92,6 @@ export default {
 $color-background-popover: #ffffff;
 $color-border-popover: #ebeef5;
 $space-popover: 10px;
-$color-title: #303133;
-$color-content: #606266;
 
 .g-popover-box {
     position: relative;

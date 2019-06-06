@@ -107,6 +107,10 @@
         <g-popover style="margin: 20px 140px 0" trigger="click" placement="top" content="我是内容">
             <g-button type="success" class="btn1" slot="reference">按钮</g-button>
         </g-popover>
+        <div>
+        <g-toast message="toast" type="error" :show="showToast" @close="showToast=false"></g-toast>
+        <g-button type="success" class="btn1" @click="showToast=true" >显示toast</g-button>
+        </div>
     </div>
 </template>
 
@@ -115,7 +119,8 @@ export default {
     name: 'demo',
     data () {
         return {
-            demoValue1: ''
+            demoValue1: '',
+            showToast: false
         }
     }
 }

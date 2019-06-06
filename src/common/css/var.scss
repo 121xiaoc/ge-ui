@@ -2,3 +2,23 @@ $fade-linear-transition: opacity 200ms linear !default;
 
 
 $box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .1);
+$box-sizing: border-box;
+
+$border-radius: 4px;
+
+$color-default: #edf2fc;
+$color-title: #303133;
+$color-content: #606266;
+
+$primary-color: #409eff; // 主要的颜色
+$primary-weak-color: #66b1ff; // 主要弱一点的颜色
+$primary-strong-color: #3a8ee6; // 主要强一点的颜色
+$success-color: #67C23A; // 成功的颜色
+$success-weak-color: #85ce61;
+$success-strong-color: #5daf34;
+$warning-color: #E6A23C; // 警告的颜色
+$warning-weak-color: #ebb563;
+$warning-strong-color: #cf9236;
+$danger-color: #F56C6C; // 危险的颜色
+$danger-weak-color: #f78989;
+$danger-strong-color: #dd6161;
