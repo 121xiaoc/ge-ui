@@ -8,7 +8,8 @@
                 ]" 
                 v-show="showPopover"
                 ref="popover">
-                popoverpopoverpopoverpopoverpopoverpopoverpopover
+                <div class="title">{{title}}</div>
+                <div class="content">{{content}}</div>
                 <div class="popover-arrow"></div>
             </div>
         </transition>
@@ -35,7 +36,9 @@ export default {
             type: String,
             default: 'top',
             validator: value => ['top', 'bottom', 'left', 'right'].includes(value)
-        }
+        },
+        title: String,
+        content: String
     },
     watch: {
     },
@@ -89,6 +92,9 @@ export default {
 $color-background-popover: #ffffff;
 $color-border-popover: #ebeef5;
 $space-popover: 10px;
+$color-title: #303133;
+$color-content: #606266;
+
 .g-popover-box {
     position: relative;
     display: inline-block;
@@ -160,6 +166,14 @@ $space-popover: 10px;
         border-style: solid;
         border-color: transparent;
         filter: drop-shadow(0 3px 12px rgba(0,0,0,.1)) 
+    }
+    .title {
+        font-size: 16px;
+        color: $color-title;
+    }
+    .content {
+        font-size: 14px;
+        color: $color-content;
     }
 }
 
