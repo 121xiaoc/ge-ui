@@ -1,12 +1,15 @@
 <template>
-    <div class="g-toast"
-        :class="[
-            type ? 'g-toast-' + type : '',
-            {
-                'is-hidden': !show
-            }
-        ]">
-        {{message}}
+    <div class="outer">
+        <transition name="slide-up-linear"
+            @afterLeave="leave">
+            <div class="g-toast"
+                v-if="show"
+                :class="[
+                    type ? 'g-toast-' + type : '',
+                ]">
+                {{message}}
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -15,19 +18,9 @@ export default {
     name: 'g-toast',
     data () {
         return {
-            // showToast: true
-
+            show: true
         }
-    },
-    watch: {
-        show (value) {
-            if (value) {
-                setTimeout(() => {
-                    this.$emit('close')
-                }, 3000)
-            }
-        }
-    },
+    }, 
     props: {
         message: { // 显示的消息
             type: String,
@@ -38,27 +31,36 @@ export default {
             default: 'default',
             validator: (value) => ['default', 'success', 'warning', 'error'].includes(value)
         },
-        show: {
-            type: Boolean,
-            default: false
+    },
+    methods: {
+        // 动画 离开的 监听
+        leave () {
+            this.$el.remove()
+            this.$destroy()
         }
     },
     mounted() {
+        setTimeout(() => {
+            this.show = false
+        }, 2000) // 延时二秒销毁
     },
 }
 </script>
 
 <style lang="scss">
     @import '../common/css/var.scss';
-    .g-toast {
-        min-width: 380px;
-        box-sizing: $box-sizing;
-        border-radius: $border-radius;
+    @import '../common/css/animations.scss';
+    @import '../common/css/transitions.scss';
+    .outer {
         position: fixed;
         left: 50%;
         top: 20px;
         transform: translateX(-50%);
-        transition: opacity .3s,transform .4s,top .4s, bottom .4s;
+    }
+    .g-toast {
+        min-width: 380px;
+        box-sizing: $box-sizing;
+        border-radius: $border-radius;
         overflow: hidden;
         padding: 15px 15px 15px 20px;
         display: flex;
@@ -66,10 +68,7 @@ export default {
         justify-content: center;
         box-shadow: $box-shadow;
         background: #ffffff;
-        &.is-hidden {
-            top: -40px;
-            opacity: 0;
-        }
+        animation: slideDown .5s;
         &.g-toast-default {
             color: $color-title;
             background-color: $color-default;

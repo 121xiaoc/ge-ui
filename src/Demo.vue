@@ -108,21 +108,31 @@
             <g-button type="success" class="btn1" slot="reference">按钮</g-button>
         </g-popover>
         <div>
-        <g-toast message="toast" type="error" :show="showToast" @close="showToast=false"></g-toast>
-        <g-button type="success" class="btn1" @click="showToast=true" >显示toast</g-button>
+            <!-- <g-toast message="toast" type="error" :show="showToast" @close="showToast=false"></g-toast> -->
+            <g-button type="success" class="btn1" @click="showToast" >显示toast</g-button>
         </div>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import toast from './toast/toast.js'
+Vue.use(toast)
 export default {
     name: 'demo',
     data () {
         return {
             demoValue1: '',
-            showToast: false
         }
-    }
+    },
+    methods: {
+        showToast () {
+            this.$toast({
+                message: '成功',
+                type: 'success'
+            })
+        }
+    },
 }
 </script>
 

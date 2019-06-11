@@ -7,3 +7,14 @@
 .fade-in-linear-enter, .fade-in-linear-leave-to{
     opacity: 0;
 }
+
+.slide-up-linear-enter-active, .slide-up-linear-leave-active {
+    transition: $slide-up-linear-transition;
+}
+
+.slide-up-linear-enter, .slide-up-linear-leave-to{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+
