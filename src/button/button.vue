@@ -5,6 +5,7 @@
         :disabled="disabled || loading"
         :class="[
             type ? 'g-button-' + type: '',
+            size ? 'g-button-' + size : '', 
             {
                 'is-disabled': disabled,
                 'is-loading': loading
@@ -35,6 +36,10 @@ export default {
             default: 'default'
         },
         icon: String, // 图标
+        size: {
+            type: String,
+            validator: (value) => ['small'].includes(value)
+        }
     },
     methods: {
         /**
@@ -144,6 +149,11 @@ $button-border-radius: 4px; //
             background: $danger-strong-color;
             border-color: $danger-strong-color;
         }
+    }
+    &.g-button-small {
+        padding: 9px 15px;
+        font-size: 12px;
+        border-radius: 3px;
     }
 }
 </style>

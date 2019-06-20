@@ -111,6 +111,9 @@
             <!-- <g-toast message="toast" type="error" :show="showToast" @close="showToast=false"></g-toast> -->
             <g-button type="success" class="btn1" @click="showToast" >显示toast</g-button>
         </div>
+        <div>
+            <g-alert></g-alert>
+        </div>
     </div>
 </template>
 
@@ -137,6 +140,21 @@ export default {
 </script>
 
 <style lang="scss">
+    * {
+        margin: 0;
+    }
+    html {
+        height: 100%;
+        font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    }
+    body {
+        height: 100%;
+    }
+    #demo {
+        height: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+    }
     .demo-layout .bg-purple {
         background: #d3dce6;
         height: 40px;

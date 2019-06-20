@@ -6,9 +6,14 @@ $box-sizing: border-box;
 
 $border-radius: 4px;
 
-$color-default: #edf2fc;
+$box-header-padding: 15px 15px 10px;
+$box-content-padding: 10px 15px;
+$box-btns-padding: 5px 15px;
+
+$color-default: #040505;
 $color-title: #303133;
 $color-content: #606266;
+$color-close: #909399;
 
 $primary-color: #409eff; // 主要的颜色
 $primary-weak-color: #66b1ff; // 主要弱一点的颜色
