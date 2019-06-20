@@ -1,19 +1,23 @@
 <template>
     <div class="g-alert-box">
-        <div class="g-alert">
-            <div class="g-alert-header">
-                <div class="g-alert-title"><span>消息</span></div>
-                <g-icon class="g-alert-close" name="close"></g-icon>
+        <transition name="slide-up-small-linear"  @afterLeave="leave" appear>
+            <div class="g-alert" v-if="show">
+                <div class="g-alert-header">
+                    <div class="g-alert-title"><span>{{title}}</span></div>
+                    <g-icon class="g-alert-close" name="close" @click="handleClose"></g-icon>
+                </div>
+                <div class="g-alert-content">
+                    <span>{{content}}</span>
+                </div>
+                <div class="g-alert-btns">
+                    <g-button type="primary" size="small" @click="handleConfrim">确定</g-button>
+                </div>
             </div>
-            <div class="g-alert-content">
-                <span>我是内容</span>
+        </transition>
+        <transition name="fade-in-linear">
+            <div class="g-alert-curtain" v-if="show">
             </div>
-            <div class="g-alert-btns">
-                <g-button type="primary" size="small">确定</g-button>
-            </div>
-        </div>
-        <div class="g-alert-curtain">
-        </div>
+        </transition>
     </div>
 </template>
 
@@ -25,12 +29,37 @@ export default {
     components: {
         'g-icon': Icon,
         'g-button': Button
+    },
+    data () {
+        return {
+            title: '',
+            content: '',
+            show: true,
+        }
+    },
+    methods: {
+        // 点击消失
+        handleClose () {
+            this.show = false
+        },
+        leave () {
+            this.$el.remove()
+            this.$destroy()
+        },
+        handleConfrim () {
+            this.$emit('callback', {
+                type: 'confirm'
+            })
+            this.show = false
+        }
     }
 }
 </script>
 
 <style lang="scss">
     @import '../common/css/var.scss';
+    @import '../common/css/animations.scss';
+    @import '../common/css/transitions.scss';
     .g-alert {
         position: relative;
         display: inline-block;
@@ -43,7 +72,7 @@ export default {
         border-radius: $border-radius;
         background: #ffffff;
         text-align: left;
-        
+        // animation: slideDown .5s;
         .g-alert-header {
             position: relative;
             padding: $box-header-padding;

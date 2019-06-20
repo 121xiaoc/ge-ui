@@ -112,7 +112,8 @@
             <g-button type="success" class="btn1" @click="showToast" >显示toast</g-button>
         </div>
         <div>
-            <g-alert></g-alert>
+            <!-- <g-alert></g-alert> -->
+            <g-button type="success" class="btn1" @click="showAlert" >显示Alert</g-button>
         </div>
     </div>
 </template>
@@ -120,7 +121,9 @@
 <script>
 import Vue from 'vue'
 import toast from './toast/toast.js'
+import alert from './alert/alert.js'
 Vue.use(toast)
+Vue.use(alert)
 export default {
     name: 'demo',
     data () {
@@ -133,6 +136,18 @@ export default {
             this.$toast({
                 message: '成功',
                 type: 'success'
+            })
+        },
+        showAlert () {
+            this.$alert({
+                title: '提醒',
+                content: '又到梅雨季，请备雨伞（；´д｀）ゞ',
+                callback: () => {
+                    this.$toast({
+                        message: '淋雨一直走也不错',
+                        type: 'success'
+                    })
+                }
             })
         }
     },

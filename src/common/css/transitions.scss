@@ -17,4 +17,13 @@
     transform: translateY(-100%);
 }
 
+.slide-up-small-linear-enter-active, .slide-up-small-linear-leave-active {
+    transition: $slide-up-linear-transition;
+}
+
+.slide-up-small-linear-enter, .slide-up-small-linear-leave-to{
+    opacity: 0;
+    transform: translateY(-20%);
+}
+
 
