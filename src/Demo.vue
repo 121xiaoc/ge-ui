@@ -115,6 +115,7 @@
             <!-- <g-alert></g-alert> -->
             <g-button type="success" class="btn1" @click="showAlert" >显示Alert</g-button>
         </div>
+        <g-carouse></g-carouse>
     </div>
 </template>
 
